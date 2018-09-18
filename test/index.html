@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Test</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <link href="style.css" rel="stylesheet" type='text/css'>
+</head>
+
+<body>
+    <div class="body">
+        <div id="registration" class="registrationCard">
+
+            <div class="form-group">
+                <label for="userName">Введіть Ваше ім'я:</label>
+                <input type="text" class="form-control" id="userName" value="" placeholder="Введіть ім'я">
+            </div>
+            <button id="startTest" type="button" class="btn btn-dark">Зареєструватись</button>
+        </div>
+
+        <div class="alert alert-primary" role="alert">
+            <p id="user"></p>
+        </div>
+        <button id="start" type="button" class="none start btn btn-success">Почати тест</button>
+
+        <div class="none prog">
+
+        </div>
+
+        <div class="pole none">
+            <img id="question" src="img/question1/image1.gif">
+            <div class="answers">
+                <img id="answerOne" src="" class="startstart">
+                <img id="answerTwo" src="" class="startstart">
+                <img id="answerTree" src="" class="startstart">
+                <img id="answerFour" src="" class="startstart">
+                <img id="answerFive" src="" class="startstart">
+                <img id="answerSix" src="" class="startstart">
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="none res">
+        <p id="lol"></p>
+    </div>
+
+
+    <script type="text/javascript">
+        window.onload = function () {
+
+            var userName = document.getElementById("userName");
+            var startTest = document.getElementById("startTest");
+            //ініціалізація масиву, масив має бути заповнений вручну
+            var questions = [{ question: "img/question1/image1.gif", answerOne: "img/question1/image11.gif", answerTwo: "img/question1/image12.gif", answerTree: "img/question1/image13.gif", answerFour: "img/question1/image14.gif", answerFive: "img/question1/image15.gif", answerSix: "img/question1/image16.gif", true: "answerSix" },
+            { question: "img/question2/image1.jpg", answerOne: "img/question2/image11.jpg", answerTwo: "img/question2/image12.jpg", answerTree: "img/question2/image13.jpg", answerFour: "img/question2/image14.jpg", answerFive: "img/question2/image15.jpg", answerSix: "img/question2/image16.jpg", true: "answerTwo" },
+            { question: "img/question3/image1.gif", answerOne: "img/question3/image11.gif", answerTwo: "img/question3/image12.gif", answerTree: "img/question3/image13.gif", answerFour: "img/question3/image14.gif", answerFive: "img/question3/image15.gif", answerSix: "img/question3/image16.gif", true: "answerSix" },
+            { question: "img/question4/image1.jpg", answerOne: "img/question4/image11.jpg", answerTwo: "img/question4/image12.jpg", answerTree: "img/question4/image13.jpg", answerFour: "img/question4/image14.jpg", answerFive: "img/question4/image15.jpg", answerSix: "img/question4/image16.jpg", true: "answerTwo" },
+            { question: "img/question5/image1.gif", answerOne: "img/question5/image11.gif", answerTwo: "img/question5/image12.gif", answerTree: "img/question5/image13.gif", answerFour: "img/question5/image14.gif", answerFive: "img/question5/image15.gif", answerSix: "img/question5/image16.gif", true: "answerSix" },
+            { question: "img/question6/image1.jpg", answerOne: "img/question6/image11.jpg", answerTwo: "img/question6/image12.jpg", answerTree: "img/question6/image13.jpg", answerFour: "img/question6/image14.jpg", answerFive: "img/question6/image15.jpg", answerSix: "img/question6/image16.jpg", true: "answerTwo" },
+            { question: "img/question7/image1.gif", answerOne: "img/question7/image11.gif", answerTwo: "img/question7/image12.gif", answerTree: "img/question7/image13.gif", answerFour: "img/question7/image14.gif", answerFive: "img/question7/image15.gif", answerSix: "img/question7/image16.gif", true: "answerSix" },
+            { question: "img/question8/image1.jpg", answerOne: "img/question8/image11.jpg", answerTwo: "img/question8/image12.jpg", answerTree: "img/question8/image13.jpg", answerFour: "img/question8/image14.jpg", answerFive: "img/question8/image15.jpg", answerSix: "img/question8/image16.jpg", true: "answerTwo" },
+            { question: "img/question9/image1.gif", answerOne: "img/question9/image11.gif", answerTwo: "img/question9/image12.gif", answerTree: "img/question9/image13.gif", answerFour: "img/question9/image14.gif", answerFive: "img/question9/image15.gif", answerSix: "img/question9/image16.gif", true: "answerSix" },
+            { question: "img/question10/image1.jpg", answerOne: "img/question10/image11.jpg", answerTwo: "img/question10/image12.jpg", answerTree: "img/question10/image13.jpg", answerFour: "img/question10/image14.jpg", answerFive: "img/question10/image15.jpg", answerSix: "img/question10/image16.jpg", true: "answerTwo" }
+            ];
+            //ініціалізація користувача, закриття неактивних блоків,  
+            startTest.onclick = function () {
+                if (userName.value == '') { return };
+
+                document.getElementsByClassName("registrationCard")[0].className = "none";
+                document.getElementsByClassName("alert")[0].className = "block";
+                document.getElementsByClassName("start")[0].className = "display";
+                document.getElementById("user").innerHTML = "Користувач: " + userName.value + "</br>" + "Вам необхідно вибрати варіант, який на Вашу думку є вірний";
+                // запуск додатку після ініціалізації
+
+                document.getElementById("start").onclick = function () {
+                    document.getElementsByClassName("display")[0].className = "none";
+
+                    var counter = 0;    // щотчик правильних відповідей
+                    var a = 0;          //змінна - номер питання яке буде виводитись 
+
+                    document.getElementsByClassName("pole")[0].className = "display";
+
+                    document.getElementsByClassName("prog")[0].className = "progress";
+                    document.getElementsByClassName("progress")[0].innerHTML = a + "/" + questions.length;
+
+
+
+
+                    // ініціалізація першого питання для встановлення відповідей як кнопок та привязки кнопок до події onclik
+                    document.getElementById("question").src = questions[a].question;
+                    document.getElementById("answerOne").src = questions[a].answerOne;
+                    document.getElementById("answerTwo").src = questions[a].answerTwo;
+                    document.getElementById("answerTree").src = questions[a].answerTree;
+                    document.getElementById("answerFour").src = questions[a].answerFour;
+                    document.getElementById("answerFive").src = questions[a].answerFive;
+                    document.getElementById("answerSix").src = questions[a].answerSix;
+
+                    var buttons = document.getElementsByClassName("startstart");  //масив кнопок з выдповыдей
+                    for (i = 0; i <= buttons.length; i++) {
+
+                        buttons[i].onclick = function (e) {          //обработчик на запуск собитія
+
+                            // var min = 0;
+                            // var max = questions.length;
+                            // function getRandom(min, max) {
+                            //     a = Math.floor(Math.random() * (max - min + 1)) + min;
+                            // }
+                            // getRandom(min, max);
+                            // console.log(a);
+
+                            // console.log(questions[a].true);
+
+
+                            var elm = e.target;                                   //визначення елементу по якому відбувся клік
+                            // console.log(elm.id);
+                            if (questions[a].true == elm.id) {                    //перевірка, якщо клік співпадає з відповіддю вказаною в масиві питання, інкремент щотчік правильних відповідей     
+                                counter++;
+                            }
+
+                            a++;                                                   //хуйова тєхніка переходу до наступного питання
+
+                            document.getElementsByClassName("progress")[0].innerHTML = a + "/" + questions.length;
+
+                            if (questions.length == a) {
+
+
+                                document.getElementsByClassName("body")[0].className = "none";                    //якщо кількість питань дорівнює кількості пройдених питань 
+                                document.getElementsByClassName("res")[0].className = "output";                   //cкриваємо все тіло документу та виводимо результат в новий дів
+                                document.getElementById("lol").innerHTML = userName.value + " Ваш результат " + counter * 100 / a + "%";
+                            }
+                            document.getElementById("question").src = questions[a].question;
+                            document.getElementById("answerOne").src = questions[a].answerOne;
+                            document.getElementById("answerTwo").src = questions[a].answerTwo;
+                            document.getElementById("answerTree").src = questions[a].answerTree;
+                            document.getElementById("answerFour").src = questions[a].answerFour;
+                            document.getElementById("answerFive").src = questions[a].answerFive;
+                            document.getElementById("answerSix").src = questions[a].answerSix;
+
+                        }
+
+                    }
+                }
+
+
+            }
+
+
+        }
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,89 @@
+body {
+    background-color: rgba(126, 97, 163, 0.836);
+    
+}
+
+.registrationCard {
+    display: block;
+    
+    box-shadow:0 0 10px #000;
+    border-radius: 20px;
+    width: 70%;
+    text-align: center;
+    margin-left: 15%;
+    margin-top: 5%;
+    color: azure;
+    font-size: 120%;
+    padding: 2%;
+    background-color: steelblue;
+}
+#user {
+    padding-top: 5%;
+    
+    color: azure;
+    text-align: center; 
+}
+.alert {
+    display: none;
+
+}
+
+.none {
+    display: none;
+}
+
+
+.display {
+    display: block;
+    box-shadow:0 0 10px #000;
+    border-radius: 20px;
+    width: 50%;
+    text-align: center;
+    margin-left: 25%;
+    margin-top: 5%;
+    color: azure;
+    font-size: 120%;
+    padding: 2%;
+    background-color: steelblue;
+}
+.answers >  img:hover {
+    border: 2px solid rgb(39, 4, 68);
+    box-shadow:0 0 10px rgb(39, 4, 68);
+}
+
+.answers > img {
+    margin-top: 20px;
+    
+    margin-right: 20px;
+}
+
+.output {
+    display: block;
+    box-shadow:0 0 10px #000;
+    border-radius: 20px;
+    width: 50%;
+    text-align: center;
+    margin-left: 25%;
+    /* margin-top: 2%; */
+    color: azure;
+    font-size: 120%;
+    padding: 2%;
+    background-color: steelblue;
+    margin-top: 10%;
+    
+    font-size: 150%;
+}
+
+.progress {
+    display: block;
+    margin-left: 0%;
+    margin-top: 0%;
+    width: 10%;
+    height: 50px;
+    margin-left: 45%;
+    background-color: rgba(0, 0, 0, 0.329);
+    color: white;
+    font-size: 200%;
+    text-align: center;
+
+}
