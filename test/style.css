@@ -1,0 +1,223 @@
+body {
+        background-color: #a1beb7;
+}
+.start > .img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 29px;
+}
+
+.img {
+    width: 182px;
+    height: 182px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 50%;
+  }
+  
+  .photo {
+    width: auto;
+    height: 100%;
+    margin: 0 auto;
+  }
+
+.startText > .iq {
+    margin-top: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-size: 34px;
+  font-weight: bold;
+}
+.startText > .p {
+    margin-top: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-size: 20px;
+  text-align: center;
+}
+.btn {
+    width: 330px;
+  height: 73px;
+  border-radius: 5px;
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+  background-color: #abcbb9;
+  color: white;
+  font-size: 20px;
+}
+.buttons {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form {
+    width: 330px;
+    margin-left: 20px;
+    text-align: center;
+}
+.form > input {
+    background-color: #a1beb7;
+    border: none;
+    border-bottom: 3px solid #abcbb9;
+}
+.form > label {
+    color: white;
+    font-size: 20px;
+    
+}
+.form-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+
+
+
+
+.progresBoard {
+    width: 100%;
+    height: 100px;
+    background-color: #abcbb9;
+}
+
+
+
+
+
+.progres{
+    float: left;
+    color: white;
+    font-size: 50px;
+    margin-left: 10px;
+}
+
+
+.timer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+.timerImg {
+    margin-left: -5%;
+    padding-top: 10px;
+}
+.timeTick {
+    margin-left: 10px;
+    margin-top: 5px;
+    font-size: 50px;
+}
+.question {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+    
+}
+.answersUp{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.answersDown{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.answersUp > img, .answersDown > img {
+    margin-top: 2%;
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+    margin-left: 20px;
+    width: 120px;
+    height: auto;
+}
+.answersUp > img:hover, .answersDown>img:hover {
+    box-shadow: 0px 0px 0px 10px #abcbb9;
+    background-color:  #abcbb9;
+    /* border-radius: 5px; */
+}
+
+.output {
+    display: block;
+}
+.container {
+    height: 150px;
+    color: white;
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.idRes {
+background-color: #abcbb9;
+height: 150px;
+display: flex;
+}
+.idAge {
+width: 10%;
+color: white;
+font-size: 30px;
+}
+.ageText, .ageValue {
+    display: flex;
+align-items: center;
+justify-content: center;
+}
+.idIq {
+    width: 80%;
+color: white;
+font-size: 30px;
+}
+.iqText, .iqValue {
+    display: flex;
+align-items: center;
+justify-content: center;
+}
+.idTimer {
+    width: 10%;
+color: white;
+font-size: 30px;
+}
+
+.timerEnd {
+    margin-top: 7%;
+}
+.containerImg, .timerValue {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.containerImg{
+    margin-top: 10px;
+}
+.idDiahnoz {
+    margin-top: 20px;
+    height: 150px;
+    color: white;
+    font-size: 30px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+
+
+.idReloader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.none {
+    display: none;
+}
